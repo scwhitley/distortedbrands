@@ -333,3 +333,6 @@ body.modal-open { overflow: hidden; }
   .modal-body { padding: 20px 16px calc(24px + env(safe-area-inset-bottom, 0px)); }
   .mform { grid-template-columns: 1fr; }
 }
+.bform { display: grid; gap: 16px; }
+.bform .intro { color: var(--fog); }
+.bform iframe { width: 100%; border: 0; }
