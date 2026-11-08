@@ -29,10 +29,17 @@ Logos and icons in `assets/` come from the Distorted Brands brand kit.
 
 ## Forms
 
-Two Netlify Forms are built in, and Netlify detects them on the first deploy:
+Each brand page has its own pop-up form (Netlify Forms). Netlify detects them on deploy, and each one
+carries a hidden `subject` field so the notification email has a clear subject line.
 
-- `contact` on `/contact/`
-- `pours-list` (email signup) on `/pours/`
+| Form | Page | Send notifications to |
+| --- | --- | --- |
+| `web-consult` | /web/ | web@distortedbrands.com |
+| `games-newsletter` | /games/ | games@distortedbrands.com |
+| `mr-distort-booking` | /mr-distort/ | booking@distortedbrands.com |
+| `bass-newsletter` | /bass/ | bass@distortedbrands.com |
+| `bass-booking` | /bass/ | bass@distortedbrands.com |
+| `pours-list` | /pours/ | pours@distortedbrands.com |
 
-Submissions show up under **Forms** in Netlify. To get them by email, add a notification under
-**Site configuration → Forms → Form notifications**.
+To route them: **Site configuration → Forms → Form notifications → Add notification → Email notification**,
+pick the form, enter the inbox, save. Repeat for each row. Replies go straight to the person who filled in the form.
