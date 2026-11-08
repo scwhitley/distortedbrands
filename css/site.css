@@ -265,17 +265,21 @@ a.work:hover h3 { text-decoration: underline; }
 .cards .btn { justify-self: start; margin-top: 6px; }
 
 /* web tiers */
-.tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.tiers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .tier { display: flex; flex-direction: column; gap: 12px; padding: 32px 28px; background: var(--panel); border: 1px solid var(--graphite); border-top: 6px solid var(--c); }
 .tier img { width: 52px; }
 .tier .mono { color: var(--c); }
-.tier h3 { font-size: 30px; }
+.tier h3 { font-size: 26px; }
 .tier p { color: var(--fog); }
 .tier ul { list-style: none; margin: 4px 0 8px; padding: 0; display: grid; gap: 8px; }
 .tier li { padding-left: 22px; position: relative; font-size: 15px; }
 .tier li::before { content: ""; position: absolute; left: 0; top: .62em; width: 12px; height: 4px; background: var(--c); }
 .tier .btn { margin-top: auto; align-self: flex-start; }
-@media (max-width: 960px) { .tiers { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 1120px) { .tiers { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .tiers { grid-template-columns: minmax(0, 1fr); } }
+.tier-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.price { font: 800 40px/1 var(--display); color: var(--bone) !important; text-align: right; }
+.price small { display: block; font-size: 10px; color: var(--fog); margin-bottom: 6px; }
 
 /* two-up CTA band (bass) */
 .cta.split .wrap { grid-template-columns: 1fr 1fr; align-items: start; gap: 48px; }
