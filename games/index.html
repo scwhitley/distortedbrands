@@ -27,7 +27,7 @@
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span><b class="sr">Menu</b></button>
     <nav id="menu" aria-label="Main">
       <ul><li><a href="/games/" style="--c:#FF4FA3" aria-current="page">Games</a></li><li><a href="/web/" style="--c:#3FD3E0">Web</a></li><li><a href="/mr-distort/" style="--c:#E2672A">Mr. Distort</a></li><li><a href="/bass/" style="--c:#B9A7F2">Bass</a></li><li><a href="/pours/" style="--c:#E8B84A">Pours</a></li></ul>
-      <button class="btn" type="button" data-open="updates">Get updates</button>
+      <button class="btn" type="button" data-open="updates">Join the playtest</button>
     </nav>
   </div>
 </header>
@@ -38,7 +38,7 @@
       <img class="bhero-logo" src="/assets/logos/distorted-games-horizontal-black.svg" alt="Distorted Games" height="30">
       <h1>Press start. Get distorted.</h1>
       <p>Distorted Games is an independent studio making games that push back. Our first game, Cozy Hacker, is in testing now. Servers Hate You, a 2D troll platformer, is in development.</p>
-      <div class="row"><button class="btn " type="button" data-open="updates">Get updates</button><a class="btn ghost-ink" href="/games/patch-notes/">Read November Patch Notes</a></div>
+      <div class="row"><button class="btn " type="button" data-open="updates">Join the playtest</button><a class="btn ghost-ink" href="/games/patch-notes/">Read November Patch Notes</a></div>
     </div>
     <div class="tiles" aria-hidden="true"><div><img src="/assets/icons/distorted-games-icon-controller-color-on-dark.svg" alt="" width="64" height="64"></div><div><img src="/assets/icons/distorted-games-icon-pixel-heart-color-on-dark.svg" alt="" width="64" height="64"></div><div><img src="/assets/icons/distorted-games-icon-trophy-color-on-dark.svg" alt="" width="64" height="64"></div><div><img src="/assets/icons/distorted-games-icon-dice-color-on-dark.svg" alt="" width="64" height="64"></div><div><img src="/assets/icons/distorted-games-icon-skull-color-on-dark.svg" alt="" width="64" height="64"></div><div><img src="/assets/icons/distorted-games-icon-gem-color-on-dark.svg" alt="" width="64" height="64"></div></div>
   </div>
@@ -49,7 +49,7 @@
 </section><section class="cta" style="--c:#FF4FA3">
   <div class="wrap">
     <h2>Want to play it early?</h2>
-    <div><p>Join the newsletter and pick &ldquo;Playtesting early builds.&rdquo; Press and publishing: games@distortedbrands.com.</p><button class="btn " type="button" data-open="updates">Get updates</button></div>
+    <div><p>Join the playtest list and I&rsquo;ll email you when a build is ready. Press and publishing: games@distortedbrands.com.</p><button class="btn " type="button" data-open="updates">Join the playtest</button></div>
   </div>
 </section><section class="others">
   <div class="wrap"><h2 class="t">More from Distorted Brands.</h2></div>
@@ -58,14 +58,21 @@
 <dialog class="modal" id="updates" aria-labelledby="updates-title" style="--c:#FF4FA3;--deep:#B8236F">
   <div class="modal-head">
     <img src="/assets/icons/distorted-games-icon-controller-black.svg" alt="" width="40" height="40">
-    <div><span class="mono">Distorted Games · Newsletter</span><h2 id="updates-title">Get game updates.</h2></div>
+    <div><span class="mono">Distorted Games · Playtest</span><h2 id="updates-title">Play it first.</h2></div>
     <button class="modal-x" type="button" data-close aria-label="Close">×</button>
   </div>
   <div class="modal-body">
-    <div class="bform">
-      <p class="intro">Distorted Patch Notes: dev updates, playtest invites and release news, once a month.</p>
-      <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="ea2a6ba8-9a08-4a92-9a44-d03a8134c191"></script>
-      <p class="fine">We only email about Distorted Games. Unsubscribe anytime.</p>
+    <form name="games-playtest" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field" class="mform">
+      <input type="hidden" name="form-name" value="games-playtest">
+      <input type="hidden" name="subject" value="New Distorted Games playtest signup">
+      <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+      <p class="intro full">Want to play before everyone else? Leave your info and I'll email you when a playtest build is ready. This isn't a mailing list.</p>
+      <label for="pt-name"><span class="mono">First name</span><input id="pt-name" name="first-name" type="text" autocomplete="given-name"></label><label for="pt-email"><span class="mono">Email <i aria-hidden="true">*</i></span><input id="pt-email" name="email" type="email" required autocomplete="email"></label><fieldset class="full"><legend class="mono">Which game?</legend><div class="checks"><label class="check"><input type="checkbox" name="game" value="Cozy Hacker" checked><span>Cozy Hacker</span></label><label class="check"><input type="checkbox" name="game" value="Servers Hate You"><span>Servers Hate You</span></label></div></fieldset><label for="pt-handle" class="full"><span class="mono">Discord, Twitch or Instagram handle (optional)</span><input id="pt-handle" name="handle" type="text"></label><p class="fine full">I'll only email you about playtests.</p>
+      <div class="full mform-foot"><button class="btn light" type="submit">Sign me up</button><p class="mform-status" role="status" aria-live="polite"></p></div>
+    </form>
+    <div class="done" hidden>
+      <h3>You're on the playtest list.</h3><p>I'll email you when there's a build to play.</p>
+      <button class="btn light" type="button" data-close>Close</button>
     </div>
   </div>
 </dialog>
