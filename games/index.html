@@ -27,7 +27,7 @@
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span><b class="sr">Menu</b></button>
     <nav id="menu" aria-label="Main">
       <ul><li><a href="/games/" style="--c:#FF4FA3" aria-current="page">Games</a></li><li><a href="/web/" style="--c:#3FD3E0">Web</a></li><li><a href="/mr-distort/" style="--c:#E2672A">Mr. Distort</a></li><li><a href="/bass/" style="--c:#B9A7F2">Bass</a></li><li><a href="/pours/" style="--c:#E8B84A">Pours</a></li></ul>
-      <a class="btn" href="/contact/">Get in touch</a>
+      <button class="btn" type="button" data-open="updates">Get updates</button>
     </nav>
   </div>
 </header>
@@ -38,7 +38,7 @@
       <img class="bhero-logo" src="/assets/logos/distorted-games-horizontal-black.svg" alt="Distorted Games" height="30">
       <h1>Press start. Get distorted.</h1>
       <p>Distorted Games is an independent studio making games that push back. Our first title is in development now, with more to share soon.</p>
-      <div class="row"><a class="btn " href="/contact/?topic=games">Get updates</a><span class="status mono">In development</span></div>
+      <div class="row"><button class="btn " type="button" data-open="updates">Get updates</button><span class="status mono">In development</span></div>
     </div>
     <div class="tiles" aria-hidden="true"><div><img src="/assets/icons/distorted-games-icon-controller-color-on-dark.svg" alt="" width="64" height="64"></div><div><img src="/assets/icons/distorted-games-icon-pixel-heart-color-on-dark.svg" alt="" width="64" height="64"></div><div><img src="/assets/icons/distorted-games-icon-trophy-color-on-dark.svg" alt="" width="64" height="64"></div><div><img src="/assets/icons/distorted-games-icon-dice-color-on-dark.svg" alt="" width="64" height="64"></div><div><img src="/assets/icons/distorted-games-icon-skull-color-on-dark.svg" alt="" width="64" height="64"></div><div><img src="/assets/icons/distorted-games-icon-gem-color-on-dark.svg" alt="" width="64" height="64"></div></div>
   </div>
@@ -48,13 +48,33 @@
   <div class="wrap"><h2 class="t">Where we are.</h2><p class="note">The first title is in the prototype stage.</p><ol><li class="now"><span class="mono">01</span><h3>Prototype</h3><p>Core mechanics and the first levels.</p></li><li><span class="mono">02</span><h3>Demo</h3><p>A free public demo to test and gather feedback.</p></li><li><span class="mono">03</span><h3>Release</h3><p>Full launch on PC.</p></li></ol></div>
 </section><section class="cta" style="--c:#FF4FA3">
   <div class="wrap">
-    <h2>Press, playtests or publishing?</h2>
-    <div><p>Write to games@distortedbrands.com.</p><a class="btn " href="/contact/?topic=games">Contact the studio</a></div>
+    <h2>Want to play it early?</h2>
+    <div><p>Join the newsletter and tick the playtest box. Press and publishing: games@distortedbrands.com.</p><button class="btn " type="button" data-open="updates">Get updates</button></div>
   </div>
 </section><section class="others">
   <div class="wrap"><h2 class="t">More from Distorted Brands.</h2></div>
   <div class="others-list"><a href="/web/" style="--c:#3FD3E0;--bar:88"><img src="/assets/icons/distorted-web-icon-browser-black.svg" alt="" width="40" height="40"><span>Distorted Web</span><em class="mono">Websites that cut through.</em></a><a href="/mr-distort/" style="--c:#E2672A;--bar:94"><img src="/assets/icons/mr-distort-icon-microphone-black.svg" alt="" width="40" height="40"><span>Mr. Distort</span><em class="mono">Stay distorted.</em></a><a href="/bass/" style="--c:#B9A7F2;--bar:88"><img src="/assets/icons/distorted-bass-icon-bass-guitar-black.svg" alt="" width="40" height="40"><span>Distorted Bass</span><em class="mono">Built on the low end.</em></a><a href="/pours/" style="--c:#E8B84A;--bar:66"><img src="/assets/icons/distorted-pours-icon-martini-black.svg" alt="" width="40" height="40"><span>Distorted Pours</span><em class="mono">Mixed with intent.</em></a></div>
 </section></main>
+<dialog class="modal" id="updates" aria-labelledby="updates-title" style="--c:#FF4FA3;--deep:#B8236F">
+  <div class="modal-head">
+    <img src="/assets/icons/distorted-games-icon-controller-black.svg" alt="" width="40" height="40">
+    <div><span class="mono">Distorted Games · Newsletter</span><h2 id="updates-title">Get game updates.</h2></div>
+    <button class="modal-x" type="button" data-close aria-label="Close">×</button>
+  </div>
+  <div class="modal-body">
+    <form name="games-newsletter" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field" class="mform">
+      <input type="hidden" name="form-name" value="games-newsletter">
+      <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+      <p class="intro full">Dev updates, demo news and release dates, straight to your inbox.</p>
+      <label for="updates-name"><span class="mono">First name</span><input id="updates-name" name="first-name" type="text" autocomplete="given-name"></label><label for="updates-email"><span class="mono">Email <i aria-hidden="true">*</i></span><input id="updates-email" name="email" type="email" required autocomplete="email"></label><fieldset class="full"><legend class="mono">I'm interested in</legend><div class="checks"><label class="check"><input type="checkbox" name="interests" value="Dev updates"><span>Dev updates</span></label><label class="check"><input type="checkbox" name="interests" value="Playtesting early builds"><span>Playtesting early builds</span></label><label class="check"><input type="checkbox" name="interests" value="Release news"><span>Release news</span></label></div></fieldset><p class="fine full">We only email about Distorted Games. Unsubscribe anytime.</p>
+      <div class="full mform-foot"><button class="btn light" type="submit">Sign me up</button><p class="mform-status" role="status" aria-live="polite"></p></div>
+    </form>
+    <div class="done" hidden>
+      <h3>You're on the list.</h3><p>Watch your inbox for the first Distorted Games update.</p>
+      <button class="btn light" type="button" data-close>Close</button>
+    </div>
+  </div>
+</dialog>
 <div class="spec" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 <footer class="site-foot">
   <div class="wrap">
@@ -62,7 +82,7 @@
       <img src="/assets/logos/distorted-brands-mark-color-on-dark.svg" alt="" width="48" height="48">
       <div><strong>Distorted by Design.</strong><span class="mono fog">Raleigh-Durham, NC</span></div>
     </div>
-    <nav class="foot-links mono" aria-label="Brands"><a href="/games/">Distorted Games</a><a href="/web/">Distorted Web</a><a href="/mr-distort/">Mr. Distort</a><a href="/bass/">Distorted Bass</a><a href="/pours/">Distorted Pours</a><a href="/contact/">Contact</a></nav>
+    <nav class="foot-links mono" aria-label="Brands"><a href="/games/">Distorted Games</a><a href="/web/">Distorted Web</a><a href="/mr-distort/">Mr. Distort</a><a href="/bass/">Distorted Bass</a><a href="/pours/">Distorted Pours</a></nav>
     <p class="mono fog legal">© 2026 Distorted Brands LLC · <a href="mailto:hello@distortedbrands.com">hello@distortedbrands.com</a></p>
   </div>
 </footer>

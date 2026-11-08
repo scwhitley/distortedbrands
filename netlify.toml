@@ -5,3 +5,9 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+# The contact page was replaced by pop-up forms on each brand page.
+[[redirects]]
+  from = "/contact/*"
+  to = "/#work"
+  status = 301
