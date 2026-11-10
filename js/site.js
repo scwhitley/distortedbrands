@@ -90,3 +90,17 @@ document.querySelectorAll('form.mform').forEach(function (form) {
       .then(function () { button.disabled = false; });
   });
 });
+
+// Click-to-load YouTube player: no YouTube requests until someone presses play.
+document.querySelectorAll('.player[data-list]').forEach(function (box) {
+  var poster = box.querySelector('.player-poster');
+  if (!poster) return;
+  poster.addEventListener('click', function () {
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/videoseries?list=' + encodeURIComponent(box.getAttribute('data-list')) + '&autoplay=1&rel=0';
+    f.title = 'Distorted Bass videos on YouTube';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    box.replaceChild(f, poster);
+  });
+});
