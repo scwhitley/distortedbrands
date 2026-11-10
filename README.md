@@ -43,3 +43,10 @@ carries a hidden `subject` field so the notification email has a clear subject l
 
 To route them: **Site configuration → Forms → Form notifications → Add notification → Email notification**,
 pick the form, enter the inbox, save. Repeat for each row. Replies go straight to the person who filled in the form.
+
+## SEO
+
+- Each page has its own `<title>`, meta description, canonical link and Open Graph tags (link previews use the images in `assets/social/`).
+- Brand pages carry schema.org structured data in a `<script type="application/ld+json">` block in `<head>`. Update prices there too if the Web prices change.
+- `sitemap.xml` lists every public page. Add a `<url>` line when you add a page (like a new Patch Notes issue) and bump `lastmod`.
+- `robots.txt` points search engines at the sitemap. `/thanks/`, `/signatures/` and the 404 page are kept out of search with `noindex`.
