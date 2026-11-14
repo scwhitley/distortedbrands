@@ -433,3 +433,7 @@ body.modal-open { overflow: hidden; }
 .shows .dates strong { font: 800 24px var(--display); }
 .shows .dates em { font-style: normal; color: #5d5b68; }
 @media (max-width: 560px) { .shows .dates li { grid-template-columns: 1fr; gap: 4px; } }
+.pn-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--graphite); border: 1px solid var(--graphite); }
+.pn-stats div { display: grid; gap: 6px; padding: 20px; background: var(--panel); }
+.pn-stats b { font: 800 clamp(36px, 6vw, 56px)/1 var(--display); color: var(--games); }
+.pn-stats span { color: var(--fog); font-size: 11px; }
