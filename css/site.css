@@ -448,3 +448,5 @@ body.modal-open { overflow: hidden; }
 .deal .price-deal b { display: block; font: 800 44px/1 var(--display); }
 .deal .btn.light { background: var(--ink); color: var(--bone); border-color: var(--ink); }
 .deal .btn.light:hover { background: transparent; color: var(--ink); }
+.tiers.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 640px) { .tiers.two { grid-template-columns: minmax(0, 1fr); } }
