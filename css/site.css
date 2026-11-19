@@ -174,7 +174,8 @@ h2.t { font-size: clamp(36px, 5vw, 60px); margin-bottom: 40px; }
 .steps li p { color: #45434f; }
 @media (max-width: 760px) { .steps ol { grid-auto-flow: row; gap: 28px; } }
 
-.works { display: grid; grid-template-columns: repeat(2, 1fr); }
+.works { display: grid; grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 1000px) { .works { grid-template-columns: repeat(2, 1fr); } .works > :last-child:nth-child(odd) { grid-column: 1 / -1; } .works > :last-child:nth-child(odd) .shot { aspect-ratio: 32 / 9; } }
 .work { display: grid; gap: 6px; padding: 28px; background: var(--c); color: var(--ink); }
 .work .shot { aspect-ratio: 16 / 9; background: var(--ink); margin-bottom: 14px; background-image: linear-gradient(#22252e 1px, transparent 1px); background-size: 100% 16px; }
 .work h3 { font-size: 26px; }
