@@ -437,3 +437,14 @@ body.modal-open { overflow: hidden; }
 .pn-stats div { display: grid; gap: 6px; padding: 20px; background: var(--panel); }
 .pn-stats b { font: 800 clamp(36px, 6vw, 56px)/1 var(--display); color: var(--games); }
 .pn-stats span { color: var(--fog); font-size: 11px; }
+
+/* logo design tiers + website bundle deal */
+.tiers.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1120px) { .tiers.three { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .tiers.three { grid-template-columns: minmax(0, 1fr); } }
+.deal { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 32px; margin-top: 16px; padding: 28px; background: var(--web); color: var(--ink); }
+.deal > div { flex: 1 1 320px; min-width: 0; }
+.deal h3 { font-size: 26px; margin-bottom: 6px; }
+.deal .price-deal b { display: block; font: 800 44px/1 var(--display); }
+.deal .btn.light { background: var(--ink); color: var(--bone); border-color: var(--ink); }
+.deal .btn.light:hover { background: transparent; color: var(--ink); }
